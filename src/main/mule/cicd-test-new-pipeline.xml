@@ -10,6 +10,6 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<flow name="cicd-test-new-pipelineFlow" doc:id="58cdfbbc-2a7a-449d-a48d-d37702058d89" >
 		<http:listener doc:name="Listener" doc:id="1afc4034-3932-4d4d-bd7c-1fdbcf11db65" config-ref="HTTP_Listener_config" path="/newcicdtest"/>
 		<set-payload value="#[payload]" doc:name="Set Payload" doc:id="e6f05e10-321c-4e22-8d06-8f72059b9a2e" />
-		<logger level="INFO" doc:name="Logger" doc:id="92883fb9-2b5d-46c9-93d8-7300f2c20221" message="CICDTest"/>
+		<logger level="INFO" doc:name="Logger" doc:id="92883fb9-2b5d-46c9-93d8-7300f2c20221" message="CICDTest2"/>
 	</flow>
 </mule>
