@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="de5cef2a-d0f9-4b91-a462-2a282e96df94" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="cicd-test-new-pipelineFlow" doc:id="58cdfbbc-2a7a-449d-a48d-d37702058d89" >
+		<http:listener doc:name="Listener" doc:id="1afc4034-3932-4d4d-bd7c-1fdbcf11db65" config-ref="HTTP_Listener_config" path="/newcicdtest"/>
+		<set-payload value="#[payload]" doc:name="Set Payload" doc:id="e6f05e10-321c-4e22-8d06-8f72059b9a2e" />
+		<logger level="INFO" doc:name="Logger" doc:id="92883fb9-2b5d-46c9-93d8-7300f2c20221" message="CICDTest"/>
+	</flow>
+</mule>
