@@ -2,15 +2,14 @@ pipeline
 {
  agent any
  stages{
-  
   stage('Build Application'){
   steps{
-   mvn clean install
+   bat 'mvn clean install'
   }
   }  
   stage('Deploy application to Mulesoft CloudHub '){
   steps{
-   mvn package deploy -DmuleDeploy
+   bat 'mvn package deploy -DmuleDeploy'
   }
   }
  }
